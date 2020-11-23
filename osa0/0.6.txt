@@ -1,0 +1,5 @@
+note over Selain: Käyttäjä luo uuden muistiinpanon 
+Selain->Palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+Palvelin->Selain: HTTP status 201
+note over Selain: Tapahtumankäsittelijä suoritetaan ja lisää uuden muistiinpanon data.json tiedostoon
+note over Selain: spa.js renderöi näytölle uuden muistiinpanolistan.

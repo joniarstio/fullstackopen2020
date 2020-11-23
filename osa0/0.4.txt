@@ -1,0 +1,24 @@
+note over Selain: Käyttäjä luo uuden muistiinpanon
+Selain->Palvelin: HTTP POST new_note
+Palvelin->Selain: HTTP Response status 302
+note over Selain: Pyyntö notes palvelimelta
+Selain->Palvelin: HTTP GET notes
+Palvelin->Selain: HTTP Response status 200
+Palvelin->Selain: HTML-koodi
+note over Selain: Pyyntö main.css palvelimelta
+Selain->Palvelin: HTTP GET main.css
+Palvelin->Selain: HTTP Response status 200
+Palvelin->Selain: main.css
+note over Selain: Pyyntö main.js palvelimelta
+Selain->Palvelin: HTTP GET main.js
+Palvelin->Selain: HTTP Response status 200
+Palvelin->Selain: main.js
+note over Selain: Pyyntö data.json palvelimelta
+Selain->Palvelin: HTTP GET data.json
+Palvelin->Selain: HTTP Response status 200
+Palvelin->Selain: data.json
+note over Selain: Pyyntö favicon.ico palvelimelta
+Selain->Palvelin: HTTP GET favicon.ico
+Palvelin->Selain: HTTP Response status 200
+Palvelin->Selain: HTML-koodi
+note right of Selain: JavaScript koodi suoritetaan ja muistiinpanot li-elementtiin
