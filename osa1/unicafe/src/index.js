@@ -5,8 +5,8 @@ const Headline = ({ headline }) => {
   return <h1>{ headline }</h1>
 };
 
-const Button = ({ text, eventHandlers }) => {
-  return <button onClick={ eventHandlers }>{ text }</button>
+const Button = ({ text, handleClick }) => {
+  return <button onClick={ handleClick }>{ text }</button>
 };
 
 const Statistics = ({ good, neutral, bad }) => {
@@ -18,7 +18,7 @@ const Statistics = ({ good, neutral, bad }) => {
         <StatisticLine text="bad" value={ bad } />
         <StatisticLine text="all" value={ good + neutral + bad } />
         <StatisticLine text="average" value={( good - bad ) / ( good + neutral + bad )}  />
-        <StatisticLine text="positive" value={( 100 * good ) / ( good + neutral + bad ) + " %"} />
+        <StatisticLine text="positive" value={( 100 * good ) / ( good + neutral + bad ) + " %" } />
       </tbody>
     </table>
   }
@@ -41,9 +41,9 @@ const App = () => {
   return (
     <div>
       <Headline headline={ 'give feedback' } />
-      <Button text={ "good" } eventHandlers={() => setGood( good + 1 )} />
-      <Button text={ "neutral" } eventHandlers={() => setNeutral( neutral + 1 )} />
-      <Button text={ "bad" } eventHandlers={() => setBad( bad + 1 )} />
+      <Button text={ "good" } handleClick={ () => setGood( good + 1 )} />
+      <Button text={ "neutral" } handleClick={ () => setNeutral( neutral + 1 )} />
+      <Button text={ "bad" } handleClick={ () => setBad( bad + 1 )} />
       <Headline headline={ 'statistics' } />
       <Statistics good={ good } neutral={ neutral } bad={ bad } />
     </div>
